@@ -7,11 +7,17 @@ import random
 from flask import Flask
 from apscheduler.schedulers.background import BackgroundScheduler
 import sys
+import sys
+
 logging.basicConfig(
-    filename='bot.log',
     level=logging.INFO,
-    format='%(asctime)s [%(levelname)s] %(message)s'
+    format="%(asctime)s [%(levelname)s] %(message)s",
+    handlers=[
+        logging.FileHandler("bot.log"),
+        logging.StreamHandler(sys.stdout)  # <-- це виводить у Render logs
+    ]
 )
+
 # Flask app
 app = Flask(__name__)
 
