@@ -99,6 +99,7 @@ def generate_image(post_type):
         return None
 
 def send_post(text):
+    logging.info("➡️ send_post викликана")
     if not text:
         logging.warning("⚠️ Немає тексту для надсилання")
         return
