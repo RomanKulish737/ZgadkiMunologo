@@ -95,10 +95,10 @@ def generate_image(post_type):
         return None
 
 def send_post(text):
-     if not text:
+    if not text:
         logging.warning("⚠️ Немає тексту для надсилання")
         return
-      try:
+    try:
         response = requests.post(
             f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage",
             data={"chat_id": TELEGRAM_CHANNEL, "text": text[:4096]}
@@ -106,7 +106,6 @@ def send_post(text):
         logging.info(f"📨 Відповідь Telegram sendMessage: {response.status_code} - {response.text}")
     except Exception as e:
         logging.error(f"❌ Telegram помилка надсилання тексту: {str(e)}")
-
 def send_image(image_url):
     if image_url:
         requests.post(
