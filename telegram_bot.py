@@ -8,9 +8,10 @@ from flask import Flask
 from apscheduler.schedulers.background import BackgroundScheduler
 import sys
 logging.basicConfig(
+    filename='bot.log',
     level=logging.INFO,
-    format="%(asctime)s [%(levelname)s] %(message)s",
-    handlers=[logging.StreamHandler(sys.stdout)]
+    format='%(asctime)s [%(levelname)s] %(message)s'
+)
 # Flask app
 app = Flask(__name__)
 
