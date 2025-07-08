@@ -133,7 +133,7 @@ def send_welcome_post():
     send_post(text)
 
 def generate_and_send():
-     logging.info("🧪 generate_and_send() запущено")
+    logging.info("🧪 generate_and_send() запущено")
     selected = random.sample(POST_TYPES, 3)
     for post_type in selected:
         logging.info(f"📤 Надсилаємо тип: {post_type}")
