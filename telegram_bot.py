@@ -6,7 +6,11 @@ import logging
 import random
 from flask import Flask
 from apscheduler.schedulers.background import BackgroundScheduler
-
+import sys
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s [%(levelname)s] %(message)s",
+    handlers=[logging.StreamHandler(sys.stdout)]
 # Flask app
 app = Flask(__name__)
 
